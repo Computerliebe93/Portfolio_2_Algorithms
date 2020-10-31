@@ -59,15 +59,16 @@ public class MatrixGraph {
             }
         }
         System.out.println("Minimum spanning tree distance " + MST);
+        System.out.println("Total price: " + MST * 1000000 + " DKK");
         PrintMST(predecessor, distance);
     }
     public void PrintMST(int[] pred, int[] dist){
         for (int i = 0; i < matrixEdgeGraph.length; i++){
             System.out.println(i + " parent " + pred[i] + " Edge weight " + dist[i]);
         }
+        System.out.println();
     }
     public int[] ShortestPath (int source){
-
         int[] distance = new int[matrixEdgeGraph.length];
         int[] predecessor = new int[matrixEdgeGraph.length];
         int[] visited = new int[matrixEdgeGraph.length];
