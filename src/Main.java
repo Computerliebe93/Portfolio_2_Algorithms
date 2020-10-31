@@ -1,5 +1,9 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.PriorityQueue;
+import java.util.*;
+
 
 public class Main {
 
@@ -162,5 +166,26 @@ public class Main {
         thisGraph.PrintPath(pred, 6);
         //thisGraph.PrintPath(pred, 5);
 
+
+    // Not working
     }
+    PriorityQueue<SmallestItem> theSmallestItem = CreateInitPriorityQueSmallest();
+    Iterator<SmallestItem> itrSmallestItem = theSmallestItem.iterator();
+        while (itrSmallestItem.hasnext()){
+        SmallestItem thisSmallest = itrSmallestItem.next();
+        System.out.println("Smallest item: " + thisSmallest.getSmallest());
+
+    }
+
+    public static PriorityQueue<SmallestItem> CreateInitPriorityQueSmallest(){
+        PriorityQueue<PriorityQueue> PriorityQue = new PriorityQueue<PriorityQueue>();
+        PriorityQue.add(new PriorityQueue(0));
+        PriorityQue.add(new PriorityQueue(2147483647));
+        PriorityQue.add(new PriorityQueue(28));
+        PriorityQue.add(new PriorityQueue(13));
+        PriorityQue.add(new PriorityQueue(24));
+        PriorityQue.add(new PriorityQueue(27));
+        return SmallestItem;
+    }
+
 }
